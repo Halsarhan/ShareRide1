@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07BE297B1EAC0B9000BA6F7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07BE297A1EAC0B9000BA6F7D /* GoogleService-Info.plist */; };
+		07BE297D1EAEA7E100BA6F7D /* SettingsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE297C1EAEA7E100BA6F7D /* SettingsTableTableViewController.swift */; };
+		07BE297F1EAEC8F300BA6F7D /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE297E1EAEC8F300BA6F7D /* SettingsTableViewCell.swift */; };
 		50E057550A884F730C90DE3F /* Pods_ShareRide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EB194B3FBF815F08F416D7 /* Pods_ShareRide.framework */; };
-		7242C7941EA83E24001E5FD2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7242C7931EA83E24001E5FD2 /* GoogleService-Info.plist */; };
 		7242C7971EA84015001E5FD2 /* RideInformationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7242C7961EA84015001E5FD2 /* RideInformationItem.swift */; };
 		7242C7991EA843CB001E5FD2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7242C7981EA843CB001E5FD2 /* User.swift */; };
 		7242C79B1EA8450E001E5FD2 /* AvailableRidesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7242C79A1EA8450E001E5FD2 /* AvailableRidesTableViewController.swift */; };
@@ -26,10 +28,12 @@
 
 /* Begin PBXFileReference section */
 		074DE5A91EA2BD0800E0121B /* ShareRide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareRide.entitlements; sourceTree = "<group>"; };
+		07BE297A1EAC0B9000BA6F7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		07BE297C1EAEA7E100BA6F7D /* SettingsTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableTableViewController.swift; sourceTree = "<group>"; };
+		07BE297E1EAEC8F300BA6F7D /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		15EB194B3FBF815F08F416D7 /* Pods_ShareRide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShareRide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5071B0FC8073FFA20A3F56F1 /* Pods-ShareRide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareRide.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShareRide/Pods-ShareRide.release.xcconfig"; sourceTree = "<group>"; };
 		613118740485C4D18B8A1132 /* Pods-ShareRide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareRide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShareRide/Pods-ShareRide.debug.xcconfig"; sourceTree = "<group>"; };
-		7242C7931EA83E24001E5FD2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7242C7961EA84015001E5FD2 /* RideInformationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideInformationItem.swift; sourceTree = "<group>"; };
 		7242C7981EA843CB001E5FD2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7242C79A1EA8450E001E5FD2 /* AvailableRidesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableRidesTableViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +109,7 @@
 				72EC25EF1EA199C1006F3F17 /* Main.storyboard */,
 				72EC25F41EA199C1006F3F17 /* LaunchScreen.storyboard */,
 				72EC25F21EA199C1006F3F17 /* Assets.xcassets */,
-				7242C7931EA83E24001E5FD2 /* GoogleService-Info.plist */,
+				07BE297A1EAC0B9000BA6F7D /* GoogleService-Info.plist */,
 			);
 			path = ShareRide;
 			sourceTree = "<group>";
@@ -129,6 +133,8 @@
 				7242C79E1EA84978001E5FD2 /* PostRideViewController.swift */,
 				7242C7A01EA85116001E5FD2 /* RidesViewController.swift */,
 				7242C7A21EA8570D001E5FD2 /* RideDetailsViewController.swift */,
+				07BE297C1EAEA7E100BA6F7D /* SettingsTableTableViewController.swift */,
+				07BE297E1EAEC8F300BA6F7D /* SettingsTableViewCell.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -210,7 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72EC25F61EA199C1006F3F17 /* LaunchScreen.storyboard in Resources */,
-				7242C7941EA83E24001E5FD2 /* GoogleService-Info.plist in Resources */,
+				07BE297B1EAC0B9000BA6F7D /* GoogleService-Info.plist in Resources */,
 				72EC25F31EA199C1006F3F17 /* Assets.xcassets in Resources */,
 				72EC25F11EA199C1006F3F17 /* Main.storyboard in Resources */,
 			);
@@ -273,6 +279,7 @@
 			files = (
 				7242C79F1EA84978001E5FD2 /* PostRideViewController.swift in Sources */,
 				7242C7A31EA8570D001E5FD2 /* RideDetailsViewController.swift in Sources */,
+				07BE297F1EAEC8F300BA6F7D /* SettingsTableViewCell.swift in Sources */,
 				72EC26021EA1A5A9006F3F17 /* RegisterViewController.swift in Sources */,
 				7242C7A11EA85116001E5FD2 /* RidesViewController.swift in Sources */,
 				7242C7971EA84015001E5FD2 /* RideInformationItem.swift in Sources */,
@@ -281,6 +288,7 @@
 				7242C7991EA843CB001E5FD2 /* User.swift in Sources */,
 				72EC25EC1EA199C1006F3F17 /* AppDelegate.swift in Sources */,
 				7242C79B1EA8450E001E5FD2 /* AvailableRidesTableViewController.swift in Sources */,
+				07BE297D1EAEA7E100BA6F7D /* SettingsTableTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

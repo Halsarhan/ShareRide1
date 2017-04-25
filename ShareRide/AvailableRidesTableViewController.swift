@@ -14,6 +14,8 @@ class AvailableRidesTableViewController: UITableViewController {
     // MARK: Properties
     var rideItems: [RideInformationItem] = []
     let ref = FIRDatabase.database().reference(withPath: "list-of-rides")
+    var selectedItemIndex: Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +57,19 @@ class AvailableRidesTableViewController: UITableViewController {
         return rideItems.count
     }
 
+    // choosing the table view cell pressed
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        selectedItemIndex = indexPath.row
+        return indexPath
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "rideDetailsSegue" {
+            let controller = segue.destination as! RideDetailsViewController
+            controller.selectedItem = [rideItems[selectedItemIndex]]
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "availableRideCell", for: indexPath) as! AvailableRidesCell
         let rideInfoItem = rideItems[indexPath.row]

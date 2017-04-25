@@ -8,6 +8,8 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
+
 
 class PostRideViewController: UIViewController {
 
@@ -19,6 +21,7 @@ class PostRideViewController: UIViewController {
     
     // MARK: Properties
     let ref = FIRDatabase.database().reference(withPath: "list-of-rides")
+    let usersRef = FIRDatabase.database().reference(withPath: "users")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,9 @@ class PostRideViewController: UIViewController {
     }
     
     @IBAction func postRideAction(_ sender: Any) {
+        
+        
+        
         if (departureTextField.text == "" || arrivalTextField.text == "" || dateTextField.text == "" || timeTextField.text == "" || seatsAvailTextField.text == "") {
             let alertController = UIAlertController(title: "Error", message: "Please fill out every field", preferredStyle: .alert)
             
@@ -40,11 +46,19 @@ class PostRideViewController: UIViewController {
             
             present(alertController, animated: true, completion: nil)
         } else {
-
-            let rideInformationItem = RideInformationItem(departure: departureTextField.text!, arrival: arrivalTextField.text!, date: dateTextField.text!, time: timeTextField.text!, seatsAvailable: Int(seatsAvailTextField.text!)!, driverName: "Dung Le", driverEmail: "dle@middlebury.edu")
+//            var firstName = ""
+//            var lastName = ""
+//            let currentUserID = FIRAuth.auth()?.currentUser?.uid
+//            let currentUserEmail = FIRAuth.auth()?.currentUser?.email
+//            self.usersRef.child(currentUserID!).observeSingleEvent(of: .value, with: { (snapshot) in
+//                firstName = (snapshot.value as! NSDictionary)["firstName"] as! String
+//                lastName = (snapshot.value as! NSDictionary)["lastName"] as! String})
+            
+            let rideInformationItem = RideInformationItem(departure: departureTextField.text!, arrival: arrivalTextField.text!, date: dateTextField.text!, time: timeTextField.text!, seatsAvailable: Int(seatsAvailTextField.text!)!, driverName: "Hamza Alsarhan", driverEmail: "halsarhan@middlebury.edu")
         
             let rideInformationItemRef = self.ref.child(departureTextField.text! + " to " + arrivalTextField.text!)
             rideInformationItemRef.setValue(rideInformationItem.toAnyObject())
+            
         }
         //Tells the user that there is an error and then gets firebase to tell them the error
         let alertController = UIAlertController(title: "Ride Posted", message: "You have successully posted a ride! \n Thank you", preferredStyle: .alert)

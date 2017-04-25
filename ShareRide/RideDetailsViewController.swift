@@ -21,6 +21,7 @@ class RideDetailsViewController: UIViewController {
     
     // MARK: Properties
     let ref = FIRDatabase.database().reference(withPath: "list-of-rides")
+    var selectedItem = [RideInformationItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,31 +29,37 @@ class RideDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         ref.observe(.value, with: { snapshot in
             for item in snapshot.children {
+                let child = item as! FIRDataSnapshot
+                let dict = child.value as! NSDictionary
+                
+//                if self.selectedItem[] as? String == dict.object(forKey: "") as? String {
+                
                 // display departure
-                let departure = RideInformationItem(snapshot: item as! FIRDataSnapshot).departure
-                self.departureLabel.text = departure
-                // display arrival
-                let arrival = RideInformationItem(snapshot: item as! FIRDataSnapshot).arrival
-                self.arrivalLabel.text = arrival
-                // display time
-                let time = RideInformationItem(snapshot: item as! FIRDataSnapshot).time
-                self.timeLabel.text = time
-                // display date
-                let date = RideInformationItem(snapshot: item as! FIRDataSnapshot).date
-                self.dateLabel.text = date
-                // display seats available
-                let seatsAvail = RideInformationItem(snapshot: item as! FIRDataSnapshot).seatsAvailable
-                self.seatsAvailLabel.text = String(seatsAvail) + " seats"
-                // display driver's name
-                let driverName = RideInformationItem(snapshot: item as! FIRDataSnapshot).driverName
-                self.driverNameLabel.text = driverName
-                // display driver's email
-                let driverEmail = RideInformationItem(snapshot: item as! FIRDataSnapshot).driverEmail
-                self.driverEmailLabel.text = driverEmail
-            }
+                    let departure = RideInformationItem(snapshot: item as! FIRDataSnapshot).departure
+                    self.departureLabel.text = departure
+                    // display arrival
+                    let arrival = RideInformationItem(snapshot: item as! FIRDataSnapshot).arrival
+                    self.arrivalLabel.text = arrival
+                    // display time
+                    let time = RideInformationItem(snapshot: item as! FIRDataSnapshot).time
+                    self.timeLabel.text = time
+                    // display date
+                    let date = RideInformationItem(snapshot: item as! FIRDataSnapshot).date
+                    self.dateLabel.text = date
+                    // display seats available
+                    let seatsAvail = RideInformationItem(snapshot: item as! FIRDataSnapshot).seatsAvailable
+                    self.seatsAvailLabel.text = String(seatsAvail) + " seats"
+                    // display driver's name
+                    let driverName = RideInformationItem(snapshot: item as! FIRDataSnapshot).driverName
+                    self.driverNameLabel.text = driverName
+                    // display driver's email
+                    let driverEmail = RideInformationItem(snapshot: item as! FIRDataSnapshot).driverEmail
+                    self.driverEmailLabel.text = driverEmail
+            
+                }
+//            }
         })
     }
-
     
     
     @IBAction func rideDetailsBackAction(_ sender: Any) {
